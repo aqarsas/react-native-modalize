@@ -289,6 +289,10 @@ export interface IProps<ListItem = any> {
    * Callback function when the modal is closed.
    */
   onClosed?(): void;
+  /**
+   * Callback function when the modal is closed.
+   */
+  onModalCloseMove?(): void;
 
   /**
    * onBackButtonPress is called when the user taps the hardware back button on

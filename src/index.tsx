@@ -631,11 +631,11 @@ const ModalizeBase = (
   const handleGestureEvent = Animated.event([{ nativeEvent: { translationY: dragY } }], {
     useNativeDriver: USE_NATIVE_DRIVER,
     listener: ({ nativeEvent: { translationY } }: PanGestureHandlerStateChangeEvent) => {
-      let closeThreshold = translationY + lastSnap;
-      let diffPer = closeThreshold/endHeight
-      if (diffPer > 0.89){
-        if (onModalCloseMove){
-            onModalCloseMove(closeThreshold, endHeight)
+      const closeThreshold = translationY + lastSnap;
+      const diffPer = closeThreshold / endHeight;
+      if (diffPer > 0.89) {
+        if (onModalCloseMove) {
+          onModalCloseMove();
         }
       }
       if (panGestureAnimatedValue) {
